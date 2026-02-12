@@ -14,35 +14,41 @@ export default function ProjectDetail({
 
   return (
     <div className="min-h-screen bg-black text-white px-6 md:px-20 py-20">
-    
       <Link
         href="/projects"
         className="text-white/60 hover:text-white transition">
         ← Back to Projects
       </Link>
 
-      
       <div className="mt-10">
         <h1 className="text-4xl md:text-5xl font-bold">{project.title}</h1>
         <p className="mt-4 text-white/70 text-lg">{project.tagline}</p>
       </div>
 
-     
       <div className="mt-8 flex flex-wrap gap-6 text-white/70">
         <span>
           <strong>Role:</strong> {project.role}
         </span>
         <span>
-          <strong>Duration:</strong> {project.duration}
+          <strong>URL: </strong>
+          {project.liveUrl ? (
+            <Link
+              href={project.liveUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline hover:text-blue-400 transition text-white">
+              {project.liveUrl}
+            </Link>
+          ) : (
+            <span className="text-gray-500">Not Available</span>
+          )}
         </span>
       </div>
 
-      
       <p className="mt-8 max-w-3xl text-white/80 leading-relaxed">
         {project.overview}
       </p>
 
-     
       <div className="mt-10">
         <h3 className="text-xl font-semibold mb-4">Tech Stack</h3>
         <div className="flex flex-wrap gap-3">
@@ -83,7 +89,7 @@ export default function ProjectDetail({
         </ul>
       </div>
 
-      <div className="mt-16 grid grid-flow-col grid-rows-4 gap-10">
+      <div className="mt-16 grid grid-flow- grid-rows-4 gap-10">
         {project.images.map((img, i) => (
           <div
             key={i}
