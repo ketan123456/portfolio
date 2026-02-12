@@ -5,14 +5,12 @@ export default function ProjectsPage() {
     
   return (
     <div className="min-h-screen bg-black text-white px-6 md:px-16 py-20">
-      <Link
-        href="/"
-        className="text-white/60 hover:text-white transition">
+      <Link href="/" className="text-white/60 hover:text-white transition">
         ← Back to Home
       </Link>
-      <h1 className="text-4xl md:text-5xl font-bold mb-14">Projects</h1>
+      <h1 className="text-4xl md:text-5xl font-bold mb-14 mt-10">Projects</h1>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 ">
         {projects.map((project) => (
           <Link key={project.slug} href={`/projects/${project.slug}`}>
             <div
