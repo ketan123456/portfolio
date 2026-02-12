@@ -13,10 +13,13 @@ export default function About() {
         About Me
       </motion.h2>
       <p className="text-gray-400 leading-7">
-        Frontend Developer with 2+ years of experience building scalable,
-        high-performance applications using React, Next.js, and Angular.
-        Experienced in enterprise dashboards, affiliate platforms, and
-        e-commerce systems.
+        I’m a Frontend Developer with 2+ years of experience building scalable
+        and high-performance web applications using React and Next.js.
+        I specialize in creating reusable UI components, optimizing frontend
+        performance, and delivering seamless user experiences. I’ve worked on
+        enterprise-grade dashboards, affiliate management platforms, and
+        real-world business applications, collaborating closely with
+        cross-functional teams to ship production-ready solutions.
       </p>
     </section>
   );

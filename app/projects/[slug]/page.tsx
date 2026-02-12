@@ -1,3 +1,6 @@
+"use client";
+
+import { useState, useEffect } from "react";
 import { projects } from "../../../Data/projects";
 import { notFound } from "next/navigation";
 import Image from "next/image";
@@ -9,6 +12,31 @@ export default function ProjectDetail({
   params: { slug: string };
 }) {
   const project = projects.find((p) => p.slug === params.slug);
+
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
+useEffect(() => {
+  if (selectedImage) {
+    document.body.style.overflowY = "hidden";
+    document.body.style.setProperty("overflow-y", "hidden", "important");
+  } else {
+    document.body.style.overflowY = "";
+    document.body.style.removeProperty("overflow-y");
+  }
+
+  return () => {
+    document.body.style.overflowY = "";
+    document.body.style.removeProperty("overflow-y");
+  };
+}, [selectedImage]);
+  useEffect(() => {
+    const handleEsc = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        setSelectedImage(null);
+      }
+    };
+    window.addEventListener("keydown", handleEsc);
+    return () => window.removeEventListener("keydown", handleEsc);
+  }, []);
 
   if (!project) return notFound();
 
@@ -29,8 +57,9 @@ export default function ProjectDetail({
         <span>
           <strong>Role:</strong> {project.role}
         </span>
+
         <span>
-          <strong>URL: </strong>
+          <strong>URL:</strong>{" "}
           {project.liveUrl ? (
             <Link
               href={project.liveUrl}
@@ -89,32 +118,105 @@ export default function ProjectDetail({
         </ul>
       </div>
 
-      <div className="mt-16 grid grid-flow- grid-rows-4 gap-10">
+      <div className="mt-16 grid gap-10 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
         {project.images.map((img, i) => (
           <div
             key={i}
             className="
-              group
-              overflow-hidden
-              rounded-3xl
-              border border-white/10
-              bg-white/5
-              backdrop-blur-2xl
-            ">
+        relative
+        group
+        overflow-hidden
+        rounded-3xl
+        border border-white/10
+        bg-white/5
+        backdrop-blur-2xl
+        aspect-video
+        cursor-pointer
+      ">
             <Image
               src={img}
               alt={project.title}
-              width={300}
-              height={200}
+              fill
               className="
-                aspect-[4/3]
-                transition duration-700
-                group-hover:scale-105
-              "
+          object-cover
+          transition duration-700
+          group-hover:scale-110
+        "
             />
+
+            <div
+              className="
+          absolute inset-0
+          bg-black/25
+          opacity-0
+          group-hover:opacity-100
+          transition duration-500
+        "
+            />
+
+            <div
+              className="
+          absolute inset-0
+          flex items-center justify-center
+          opacity-0
+          group-hover:opacity-100
+          transition duration-500
+        ">
+              <button
+                className="
+            relative
+            px-12 py-4
+            rounded-full
+            text-lg font-semibold
+            text-white
+            bg-white/10
+            backdrop-blur-3xl
+            border border-white/30
+            shadow-[0_0_30px_rgba(255,255,255,0.15)]
+            hover:shadow-[0_0_40px_rgba(255,255,255,0.25)]
+            hover:bg-white/20
+            transition duration-300
+          "
+                onClick={() => setSelectedImage(img)}>
+                VIEW
+              </button>
+            </div>
           </div>
         ))}
       </div>
+
+      {selectedImage && (
+        <div
+          className="
+            fixed inset-0 z-50
+            bg-black/90 backdrop-blur-md
+            flex items-center justify-center
+            p-6
+          "
+          onClick={() => setSelectedImage(null)}>
+          <button
+            className="
+              absolute top-6 right-6
+              text-white text-3xl
+              hover:text-blue-400
+              transition
+            "
+            onClick={() => setSelectedImage(null)}>
+            ✕
+          </button>
+
+          <div
+            className="relative max-w-6xl w-full aspect-video"
+            onClick={(e) => e.stopPropagation()}>
+            <Image
+              src={selectedImage}
+              alt="Preview"
+              fill
+              className="object-contain rounded-2xl"
+            />
+          </div>
+        </div>
+      )}
     </div>
   );
 }

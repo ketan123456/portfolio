@@ -15,6 +15,7 @@ export default function Contact() {
         +91 88882138411
       </Link>
       <Link
+        target="_blank"
         href="https://www.linkedin.com/in/ketan-kritesh-7b662b136/"
         className="text-gray-400 block">
         https://www.linkedin.com/in/ketan-kritesh-7b662b136/

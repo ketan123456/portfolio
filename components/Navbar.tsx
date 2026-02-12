@@ -11,10 +11,10 @@ export default function Navbar() {
 
   const navLinks = [
     { name: "About", href: "#about" },
+    { name: "Projects", href: "/projects" },
     { name: "Skills", href: "#skills" },
     { name: "Experience", href: "#experience" },
     { name: "Contact", href: "#contact" },
-    { name: "Projects", href: "/projects" },
   ];
 
   return (
@@ -23,10 +23,8 @@ export default function Navbar() {
       animate={{ y: 0 }}
       transition={{ duration: 0.6 }}
       className="fixed top-0 w-[100vw] glass backdrop-blur-xl p-5 z-50">
-      <div className="max-w-6xl mx-auto flex justify-between items-center">
-        <h2 className="font-bold text-white">Ketan Kritesh</h2>
-
-        <div className="hidden md:flex space-x-6 text-sm text-white">
+      <div className="max-w-6xl mx-auto flex md:justify-center justify-end  items-center">
+        <div className="hidden md:flex space-x-6 gap-8 flex text-sm text-white">
           {navLinks.map((link) => {
             const isActive =
               link.href.startsWith("/") &&
@@ -37,21 +35,32 @@ export default function Navbar() {
                 key={link.name}
                 href={link.href}
                 onClick={() => setIsOpen(false)}
-                className="relative group">
+                className="relative group px-5 py-2 ">
                 <span
-                  className={`transition-colors duration-300 ${
-                    isActive ? "text-blue-400" : "group-hover:text-blue-400"
-                  }`}>
+                  className={`
+      relative z-10 rounded-full
+      transition-all duration-300
+      ${isActive ? "text-white" : "text-white/70 group-hover:text-white"}
+    `}>
                   {link.name}
                 </span>
 
+                {/* Glass Background */}
                 <span
                   className={`
-                    absolute left-0 -bottom-1 h-[2px]
-                    bg-blue-400
-                    transition-all duration-300
-                    ${isActive ? "w-full" : "w-0 group-hover:w-full"}
-                  `}
+      absolute inset-0
+      rounded-full
+      bg-white/5
+      backdrop-blur-xl
+      border border-white/10
+      shadow-[0_0_30px_rgba(255,255,255,0.05)]
+      transition-all duration-300
+      ${
+        isActive
+          ? "opacity-100 scale-100"
+          : "opacity-0 scale-90 group-hover:opacity-100 group-hover:scale-100"
+      }
+    `}
                 />
               </Link>
             );

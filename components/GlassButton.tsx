@@ -20,7 +20,7 @@ export default function GlassButton({ text }: { text: string }) {
       whileHover={{ scale: 1.05 }}
       whileTap={{ scale: 0.95 }}
       transition={{ type: "spring", stiffness: 300 }}
-      className="relative px-8 py-3 rounded-2xl glass overflow-hidden"
+      className="relative px-8 py-3 rounded-full glass overflow-hidden"
     >
       <span
         className="absolute inset-0 rounded-2xl pointer-events-none"

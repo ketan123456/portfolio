@@ -68,7 +68,9 @@ export default function Skills() {
   }, []);
 
   return (
-    <section id="skills" className="md:py-24 py-16 overflow-x-hidden bg-black text-white">
+    <section
+      id="skills"
+      className="md:py-24 py-16 overflow-x-hidden bg-black text-white">
       <h2 className="text-3xl font-bold mb-14 text-center">Skills</h2>
 
       <div ref={splideRef} className="splide">
@@ -81,14 +83,17 @@ export default function Skills() {
                   transition={{ type: "spring", stiffness: 300 }}
                   className="
                     flex gap-3 items-center justify-center
-                    p-6
-                    rounded-2xl
-                    bg-white/5
-                    backdrop-blur-xl
-                    border border-white/10
-                    text-white
-                    hover:text-blue-400
-                    transition
+                    relative overflow-hidden
+                bg-white/5
+                backdrop-blur-2xl
+                border border-white/10
+                rounded-3xl
+                p-6
+                transition-all duration-500
+                hover:bg-white/10
+                hover:border-white/20
+                hover:-translate-y-3
+                hover:shadow-2xl
                   ">
                   {skill.icon}
                   <p className="text-sm whitespace-nowrap text-white/70 group-hover:text-white">
