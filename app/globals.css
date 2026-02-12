@@ -1,7 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
+html{scroll-behavior: smooth}
 body { @apply bg-black text-white overflow-x-hidden;
 }
 .neo-bg { background: radial-gradient(circle at center, rgba(59,130,246,0.15), transparent 60%); }
