@@ -58,6 +58,6 @@ export const projects: ProjectType[] = [
       "Smart suggestions powered by user interaction data.",
     ],
       images: Array.from({ length: 24 }, (_, i) => `/clymb/clymb${i + 1}.png`),
-      liveUrl: "",
+      liveUrl: "https://clymbadmin.evdpl.com",
   },
 ];
