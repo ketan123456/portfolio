@@ -1,0 +1,8 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body { @apply bg-black text-white overflow-x-hidden;
+}
+.neo-bg { background: radial-gradient(circle at center, rgba(59,130,246,0.15), transparent 60%); }
+.glass { background: rgba(255,255,255,0.08); backdrop-filter: blur(20px); border: 1px solid rgba(255,255,255,0.15); box-shadow: 0 8px 32px rgba(0,0,0,0.3); }
