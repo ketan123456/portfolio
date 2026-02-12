@@ -36,7 +36,7 @@ export const projects: ProjectType[] = [
           "/mporeo/mporeo5.png",
       ],
       liveUrl: "https://mporeo.one",
-      role: ""
+      role: "Frontend developer",
   },
   {
     slug: "clymb",
