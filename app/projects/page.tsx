@@ -1,8 +1,9 @@
 import Link from "next/link";
 import { projects } from "../../Data/projects";
+import { metadata } from "../layout";
 
 export default function ProjectsPage() {
-    
+    metadata.title = "Projects | Ketan Kritesh";
   return (
     <div className="min-h-screen bg-black text-white px-6 md:px-16 py-20">
       <Link href="/" className="text-white/60 hover:text-white transition">
