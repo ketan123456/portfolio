@@ -12,7 +12,7 @@ export default function About() {
         className="text-3xl font-bold mb-6">
         About Me
       </motion.h2>
-      <p className="text-gray-400 leading-7">
+      <p className=" leading-7">
         I’m a Frontend Developer with 2+ years of experience building scalable
         and high-performance web applications using React and Next.js.
         I specialize in creating reusable UI components, optimizing frontend

@@ -19,7 +19,7 @@ export default function Hero() {
         animate={{ opacity: 1 }}
         transition={{ delay: 0.3 }}
         className="mt-4 text-gray-400">
-        Frontend Developer | React • Next.js
+        Frontend Developer | React • Next.js • UI Development
       </motion.p>
 
       <Link href="/projects" className="mt-8">

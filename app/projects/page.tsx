@@ -16,6 +16,7 @@ export default function ProjectsPage() {
           <Link key={project.slug} href={`/projects/${project.slug}`}>
             <div
               className="
+              h-full
                 group relative overflow-hidden
                 bg-white/5
                 backdrop-blur-2xl

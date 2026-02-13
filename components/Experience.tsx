@@ -8,17 +8,22 @@ export default function Experience() {
 
       <motion.div
         whileHover={{ scale: 1.02 }}
-        className="group relative overflow-hidden
-                bg-white/5
-                backdrop-blur-2xl
-                border border-white/10
-                rounded-3xl
-                p-6
-                transition-all duration-500
-                hover:bg-white/10
-                hover:border-white/20
-                hover:-translate-y-3
-                hover:shadow-2xl">
+        className=" p-8 rounded-2xl
+        text-sm text-white/90
+        bg-white/5
+        backdrop-blur-2xl
+        border border-white/10
+        shadow-[0_0_20px_rgba(255,255,255,0.05)]
+        transition-all duration-300
+        hover:bg-white/10
+        hover:border-white/20
+        hover:shadow-[0_0_30px_rgba(255,255,255,0.15)]
+        hover:-translate-y-1
+        cursor-pointer
+        before:absolute before:inset-0 before:rounded-2xl
+        before:bg-gradient-to-r before:from-white/20 before:to-transparent
+        before:opacity-0 hover:before:opacity-100
+        before:transition mb-8">
         <div className="flex gap-4 justify-between">
           <h3 className="font-semibold">Systema Procesa Pago Corp</h3>
           <p className="font-normal">Nov 2024-Jan 2026</p>
@@ -28,17 +33,22 @@ export default function Experience() {
 
       <motion.div
         whileHover={{ scale: 1.02 }}
-        className="group relative mt-5 overflow-hidden
-                bg-white/5
-                backdrop-blur-2xl
-                border border-white/10
-                rounded-3xl
-                p-6
-                transition-all duration-500
-                hover:bg-white/10
-                hover:border-white/20
-                hover:-translate-y-3
-                hover:shadow-2xl">
+        className=" p-8 rounded-2xl
+        text-sm text-white/90
+        bg-white/5
+        backdrop-blur-2xl
+        border border-white/10
+        shadow-[0_0_20px_rgba(255,255,255,0.05)]
+        transition-all duration-300
+        hover:bg-white/10
+        hover:border-white/20
+        hover:shadow-[0_0_30px_rgba(255,255,255,0.15)]
+        hover:-translate-y-1
+        cursor-pointer
+        before:absolute before:inset-0 before:rounded-2xl
+        before:bg-gradient-to-r before:from-white/20 before:to-transparent
+        before:opacity-0 hover:before:opacity-100
+        before:transition mb-8">
         <div className="flex gap-4 justify-between">
           <h3 className="font-semibold">Evince Development Pvt. Ltd</h3>
           <p className="font-normal">Feb 2023-Oct 2024</p>
