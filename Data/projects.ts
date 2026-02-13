@@ -58,7 +58,7 @@ export const projects: ProjectType[] = [
       "Tracks learning activities and milestones.",
       "Smart suggestions powered by user interaction data.",
     ],
-    images: Array.from({ length: 25 }, (_, i) => `/clymb/clymb${i + 1}.png`),
+    images: Array.from({ length: 24 }, (_, i) => `/clymb/clymb${i + 1}.png`),
     liveUrl: "https://clymbadmin.evdpl.com",
   },
   {
@@ -144,6 +144,6 @@ export const projects: ProjectType[] = [
       "Full control over vendors, bookings, and transactions for platform transparency.",
     ],
     images: Array.from({ length: 7 }, (_, i) => `/gotu/gotu${i + 1}.png`),
-    liveUrl: "",
+    liveUrl: "  ",
   },
 ];
