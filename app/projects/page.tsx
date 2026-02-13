@@ -33,7 +33,7 @@ export default function ProjectsPage() {
               <p className="mt-2 text-white/70 text-sm">{project.tagline}</p>
 
               <div className="mt-4 flex flex-wrap gap-2">
-                {project.techStack.slice(0, 3).map((tech, i) => (
+                {project.techStack.map((tech, i) => (
                   <span
                     key={i}
                     className="text-xs px-3 py-1 rounded-full bg-white/10 text-white/80">

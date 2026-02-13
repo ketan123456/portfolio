@@ -104,17 +104,24 @@ export default function ProjectDetail({
             <TechTooltip key={i} tech={tech}>
               <span
                 className="
-                px-4 py-2 rounded-full
-               overflow-hidden
-                bg-white/5
-                backdrop-blur-2xl
-                border border-white/10
-                transition-all duration-500
-                hover:bg-white/10
-                hover:border-white/20
-                hover:-translate-y-3
-                hover:shadow-2xl
-                text-sm
+                relative
+        px-5 py-2
+        rounded-full
+        text-sm text-white/90
+        bg-white/5
+        backdrop-blur-2xl
+        border border-white/10
+        shadow-[0_0_20px_rgba(255,255,255,0.05)]
+        transition-all duration-300
+        hover:bg-white/10
+        hover:border-white/20
+        hover:shadow-[0_0_30px_rgba(255,255,255,0.15)]
+        hover:-translate-y-1
+        cursor-pointer
+        before:absolute before:inset-0 before:rounded-full
+before:bg-gradient-to-r before:from-white/20 before:to-transparent
+before:opacity-0 hover:before:opacity-100
+before:transition
               ">
                 {tech}
               </span>
@@ -131,13 +138,23 @@ export default function ProjectDetail({
             <li
               key={i}
               className="
-                bg-white/5
-                backdrop-blur-xl
-                border border-white/10
-                rounded-2xl
                 p-4
-                hover:bg-white/10
-                transition
+        rounded-2xl
+        text-sm text-white/90
+        bg-white/5
+        backdrop-blur-2xl
+        border border-white/10
+        shadow-[0_0_20px_rgba(255,255,255,0.05)]
+        transition-all duration-300
+        hover:bg-white/10
+        hover:border-white/20
+        hover:shadow-[0_0_30px_rgba(255,255,255,0.15)]
+        hover:-translate-y-1
+        cursor-pointer
+        before:absolute before:inset-0 before:rounded-2xl
+        before:bg-gradient-to-r before:from-white/20 before:to-transparent
+        before:opacity-0 hover:before:opacity-100
+        before:transition
               ">
               {feature}
             </li>
@@ -159,7 +176,8 @@ export default function ProjectDetail({
             <Image
               src={img}
               alt={project.title}
-              fill
+              width={400}
+              height={220}
               className="
                 object-cover
                 transition duration-700

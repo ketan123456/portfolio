@@ -7,7 +7,9 @@ import {
   shift,
   autoUpdate,
 } from "@floating-ui/react";
-import { useState, useEffect } from "react";
+import { useState } from "react";
+import { createPortal } from "react-dom";
+import { skillDescriptions } from "../Data/skillDescriptions";
 
 interface Props {
   tech: string;
@@ -16,39 +18,15 @@ interface Props {
 
 export default function TechTooltip({ tech, children }: Props) {
   const [open, setOpen] = useState(false);
-  const [data, setData] = useState<string | null>(null);
-  const [loading, setLoading] = useState(false);
 
   const { refs, floatingStyles } = useFloating({
     placement: "top",
-    middleware: [
-      offset(10),   // space from element
-      flip(),       // flip if no space
-      shift({ padding: 10 }), // prevent overflow
-    ],
+    strategy: "fixed",
+    middleware: [offset(10), flip(), shift({ padding: 10 })],
     whileElementsMounted: autoUpdate,
   });
 
-  useEffect(() => {
-    if (!open || data) return;
-
-    const fetchData = async () => {
-      setLoading(true);
-      try {
-        const res = await fetch(
-          `https://en.wikipedia.org/api/rest_v1/page/summary/${tech}`
-        );
-        const result = await res.json();
-        setData(result.extract || "No info available.");
-      } catch {
-        setData("Information unavailable.");
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchData();
-  }, [open, tech, data]);
+  const description = skillDescriptions[tech] || "No description available.";
 
   return (
     <>
@@ -56,28 +34,29 @@ export default function TechTooltip({ tech, children }: Props) {
         ref={refs.setReference}
         onMouseEnter={() => setOpen(true)}
         onMouseLeave={() => setOpen(false)}
-        className="inline-block"
-      >
+        className="inline-block cursor-pointer">
         {children}
       </div>
 
-      {open && (
-        <div
-          ref={refs.setFloating}
-          style={floatingStyles}
-          className="
-            z-50
-            w-72 p-4 rounded-2xl
-            bg-white/10 backdrop-blur-3xl
-            border border-white/20
-            text-sm text-white
-            shadow-2xl
-            transition
-          "
-        >
-          {loading ? "Loading..." : data}
-        </div>
-      )}
+      {open &&
+        createPortal(
+          <div
+            ref={refs.setFloating}
+            style={floatingStyles}
+            className="
+              z-[9999]
+              w-80 p-4
+              rounded-2xl
+              bg-white/10 backdrop-blur-3xl
+              border border-white/20
+              text-sm text-white
+              shadow-2xl
+              transition-all duration-200
+            ">
+            {description}
+          </div>,
+          document.body,
+        )}
     </>
   );
 }
