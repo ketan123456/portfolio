@@ -77,7 +77,7 @@ export default function ProjectDetail({
 
         <span>
           <strong>URL:</strong>{" "}
-          {project.liveUrl ? (
+          {project.liveUrl && project.liveUrl.trim() !== "" ? (
             <Link
               href={project.liveUrl}
               target="_blank"
@@ -90,9 +90,8 @@ export default function ProjectDetail({
           )}
         </span>
       </div>
-
       {/* Overview */}
-      <p className="mt-8 max-w-3xl text-white/80 leading-relaxed">
+      <p className="mt-8 max-w-3xl block text-white/80 leading-relaxed">
         {project.overview}
       </p>
 
