@@ -177,7 +177,7 @@ before:transition
               src={img}
               alt={project.title}
               width={400}
-              height={220}
+              height={280}
               className="
                 object-cover
                 transition duration-700
