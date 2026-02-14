@@ -169,7 +169,7 @@ before:transition
             className="
               relative group overflow-hidden
               rounded-3xl border border-white/10
-              bg-white/5 backdrop-blur-2xl
+              bg-white/5 backdrop-blur-8xl
               aspect-video cursor-pointer
             ">
             <Image
@@ -178,6 +178,7 @@ before:transition
               width={400}
               height={280}
               className="
+                h-full
                 object-cover
                 transition duration-700
                 group-hover:scale-110
@@ -201,13 +202,13 @@ before:transition
               <button
                 onClick={() => setSelectedIndex(i)}
                 className="
-                  px-12 py-4 rounded-full
-                  text-lg font-semibold text-white
-                  bg-white/10 backdrop-blur-3xl
-                  border border-white/30
-                  shadow-[0_0_30px_rgba(255,255,255,0.15)]
-                  hover:bg-white/20
-                  transition
+                px-12 py-4 rounded-full
+                text-lg font-semibold text-white
+                bg-white/10 
+                border border-white/20
+                shadow-lg
+                hover:bg-white/20
+                transition-colors duration-300 ease-out
                 ">
                 VIEW
               </button>

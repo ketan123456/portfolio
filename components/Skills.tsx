@@ -17,6 +17,7 @@ import {
   TailwindIcon,
   BootstrapIcon,
   MaterialIcon,
+  RestApiIcon,
 } from "./icons";
 
 const skills = [
@@ -31,7 +32,7 @@ const skills = [
   { name: "Material UI (MUI)", icon: <MaterialIcon /> },
   { name: "Bootstrap", icon: <BootstrapIcon /> },
   { name: "Tailwind CSS", icon: <TailwindIcon /> },
-  { name: "REST APIs", icon: <ApiIcon /> },
+  { name: "REST APIs", icon: <RestApiIcon /> },
 ];
 
 export default function Skills() {
