@@ -5,7 +5,7 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 
-export default function Navbar() {
+export  function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const pathname = usePathname();
 
@@ -69,11 +69,12 @@ export default function Navbar() {
 
         <button
           className="md:hidden text-white"
+          aria-label="toggle menu"
           onClick={() => setIsOpen(!isOpen)}>
           <div className="space-y-1">
-            <span className="block w-6 h-[2px] bg-white" />
-            <span className="block w-6 h-[2px] bg-white" />
-            <span className="block w-6 h-[2px] bg-white" />
+            <span className="block w-6 h-[2px] transition bg-white" />
+            <span className="block w-6 h-[2px] transition bg-white" />
+            <span className="block w-6 h-[2px] transition bg-white" />
           </div>
         </button>
       </div>
