@@ -202,7 +202,7 @@ before:transition
               <button
                 onClick={() => setSelectedIndex(i)}
                 className="
-                px-12 py-4 rounded-full
+                px-5 py-2 rounded-full
                 text-lg font-semibold text-white
                 bg-white/10 
                 border border-white/20
