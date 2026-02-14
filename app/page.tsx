@@ -1,12 +1,14 @@
 "use client"
+import dynamic from "next/dynamic";
+const Navbar = dynamic(() => import("../components/Navbar"),{loading: ()=><p>loading...</p>})
+const Hero = dynamic(() => import("../components/Hero"),{loading: ()=><p>loading...</p>})
+const About = dynamic(() => import("../components/About"),{loading: ()=><p>loading...</p>});
+const Skills = dynamic(() => import("../components/Skills"),{loading: ()=><p>loading...</p>});
+const Experience = dynamic(() => import("../components/Experience"),{loading: ()=><p>loading...</p>});
+const Contact = dynamic(() => import("../components/Contact"),{loading: ()=><p>loading...</p>});
+const Education = dynamic(() => import("../components/Education"),{loading: ()=><p>loading...</p>});
 
-import Navbar from "../components/Navbar"
-import Hero from "../components/Hero"
-import About from "../components/About"
-import Skills from "../components/Skills"
-import Experience from "../components/Experience"
-import Contact from "../components/Contact"
-import Education from "../components/Education"
+
 
 export default function Home() {
   return (
