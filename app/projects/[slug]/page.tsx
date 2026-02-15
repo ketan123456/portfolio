@@ -104,6 +104,7 @@ export default function ProjectDetail({
               <span
                 className="
                 relative
+        px-5 py-2
         rounded-full
         text-sm text-white/90
         bg-white/5
