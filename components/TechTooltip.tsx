@@ -34,7 +34,7 @@ export default function TechTooltip({ tech, children }: Props) {
         ref={refs.setReference}
         onMouseEnter={() => setOpen(true)}
         onMouseLeave={() => setOpen(false)}
-        className="inline-block cursor-pointer px-5 py-2">
+        className="inline-block cursor-pointer">
         {children}
       </div>
 

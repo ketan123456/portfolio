@@ -105,6 +105,7 @@ export default function ProjectDetail({
                 className="
                 relative
         px-5 py-2
+        block
         rounded-full
         text-sm text-white/90
         bg-white/5
