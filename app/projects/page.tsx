@@ -28,12 +28,13 @@ export default function ProjectsPage() {
                 hover:border-white/20
                 hover:-translate-y-3
                 hover:shadow-2xl
+                flex flex-col
               ">
               <h3 className="text-xl font-semibold">{project.title}</h3>
 
-              <p className="mt-2 text-white/70 text-sm">{project.tagline}</p>
+              <p className="mt-2 mb-4 text-white/70 text-sm">{project.tagline}</p>
 
-              <div className="mt-4 flex flex-wrap gap-2">
+              <div className="mt-auto flex flex-wrap gap-2">
                 {project.techStack.map((tech, i) => (
                   <span
                     key={i}
