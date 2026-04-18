@@ -146,4 +146,33 @@ export const projects: ProjectType[] = [
     images: Array.from({ length: 7 }, (_, i) => `/gotu/gotu${i + 1}.png`),
     liveUrl: "  ",
   },
+  // {
+  //   slug: "Antiluxe",
+  //   title: "Antiluxe",
+  //   tagline:
+  //     "A performance-driven skincare e-commerce platform offering clinically proven cosmetic products with clean formulations and visible results.",
+
+  //   overview:
+  //     "Antiluxe is a modern skincare e-commerce platform focused on delivering high-performance cosmetic products built on clinically proven ingredients and clean formulations. The platform allows users to explore and purchase skincare products targeting concerns like pigmentation, dullness, uneven texture, and dehydration. It emphasizes minimal yet effective formulations, combining science-backed ingredients with a premium and intuitive user experience. The system ensures a seamless shopping journey with secure transactions, product clarity, and a visually refined interface aligned with the brand’s luxury identity.",
+
+  //   role: "Frontend Developer",
+
+  //   techStack: ["Next.js", "Tailwind CSS", "Node.js", "MySQL"],
+
+  //   features: [
+  //     "Browse and purchase skincare products with detailed descriptions, ingredients, and benefits.",
+  //     "Clean, minimal, and premium UI focused on product presentation and user experience.",
+  //     "Responsive design ensuring smooth experience across all devices.",
+  //     "Secure checkout and optimized e-commerce flow.",
+  //     "Product detail pages highlighting usage, formulation, and results.",
+  //     "Reusable and scalable frontend architecture for performance and maintainability.",
+  //   ],
+
+  //   images: Array.from(
+  //     { length: 7 },
+  //     (_, i) => `/Antiluxe/Antiluxe${i + 1}.png`,
+  //   ),
+
+  //   liveUrl: "https://www.antiluxe.in",
+  // }
 ];
