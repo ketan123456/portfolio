@@ -117,7 +117,7 @@ export default function ProjectDetailClient({ project }: any) {
         {project.images.map((img: string, i: number) => (
           <div
             key={i}
-            className="relative group overflow-hidden rounded-2xl border border-white/10 cursor-pointer">
+            className="relative aspect-video group overflow-hidden rounded-2xl border border-white/10 cursor-pointer">
             <Image
               src={img}
               alt={project.title}

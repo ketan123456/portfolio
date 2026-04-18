@@ -169,7 +169,7 @@ export const projects: ProjectType[] = [
     ],
 
     images: Array.from(
-      { length: 7 },
+      { length: 18 },
       (_, i) => `/Antiluxe/Antiluxe${i + 1}.png`,
     ),
 
