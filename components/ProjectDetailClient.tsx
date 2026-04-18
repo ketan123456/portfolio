@@ -113,7 +113,7 @@ export default function ProjectDetailClient({ project }: any) {
       </div>
 
       {/* Image Grid */}
-      <div className="mt-16 aspect-video grid gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="mt-16  grid gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
         {project.images.map((img: string, i: number) => (
           <div
             key={i}
