@@ -43,7 +43,9 @@ export default function ProjectDetailClient({ project }: any) {
 
   return (
     <div className="min-h-screen bg-black text-white px-6 md:px-20 py-20">
-      <Link href="/projects" className="text-white/60 hover:text-white transition">
+      <Link
+        href="/projects"
+        className="text-white/60 hover:text-white transition">
         ← Back to Projects
       </Link>
 
@@ -64,8 +66,7 @@ export default function ProjectDetailClient({ project }: any) {
               href={project.liveUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="underline hover:text-blue-400 transition text-white"
-            >
+              className="underline hover:text-blue-400 transition text-white">
               {project.liveUrl}
             </Link>
           ) : (
@@ -83,9 +84,7 @@ export default function ProjectDetailClient({ project }: any) {
         <div className="flex flex-wrap gap-3">
           {project.techStack.map((tech: string, i: number) => (
             <TechTooltip key={i} tech={tech}>
-              <span className=" ">
-                {tech}
-              </span>
+              <span className=" ">{tech}</span>
             </TechTooltip>
           ))}
         </div>
@@ -97,8 +96,7 @@ export default function ProjectDetailClient({ project }: any) {
           {project.features.map((feature: string, i: number) => (
             <li
               key={i}
-              className="p-4 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 transition"
-            >
+              className="p-4 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 transition">
               {feature}
             </li>
           ))}
@@ -109,8 +107,7 @@ export default function ProjectDetailClient({ project }: any) {
         {project.images.map((img: string, i: number) => (
           <div
             key={i}
-            className="relative aspect-video group overflow-hidden rounded-2xl border border-white/10 cursor-pointer"
-          >
+            className="relative aspect-video group overflow-hidden rounded-2xl border border-white/10 cursor-pointer">
             <Image
               src={img}
               alt={project.title}
@@ -123,8 +120,7 @@ export default function ProjectDetailClient({ project }: any) {
             <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition">
               <button
                 onClick={() => setSelectedIndex(i)}
-                className="px-4 py-2 bg-white/20 rounded-full"
-              >
+                className="px-4 py-2 bg-white/20 rounded-full">
                 VIEW
               </button>
             </div>
@@ -136,8 +132,7 @@ export default function ProjectDetailClient({ project }: any) {
       {selectedIndex !== null && (
         <div
           className="fixed inset-0 z-50 bg-black/95 flex items-center justify-center"
-          onClick={() => setSelectedIndex(null)}
-        >
+          onClick={() => setSelectedIndex(null)}>
           {/* Close (Top Right) */}
           <button
             onClick={(e) => {
@@ -145,8 +140,7 @@ export default function ProjectDetailClient({ project }: any) {
               setSelectedIndex(null);
             }}
             className="absolute top-4 right-4 md:top-6 md:right-6 h-12 w-12 rounded-full bg-white/20 text-white text-2xl flex items-center justify-center hover:bg-white/30 transition"
-            aria-label="Close"
-          >
+            aria-label="Close">
             ✕
           </button>
 
@@ -156,11 +150,10 @@ export default function ProjectDetailClient({ project }: any) {
               e.stopPropagation();
               setSelectedIndex(
                 (selectedIndex - 1 + project.images.length) %
-                  project.images.length
+                  project.images.length,
               );
             }}
-            className="absolute left-4 z-50 md:left-10 h-12 w-12 rounded-full bg-white/20 text-white text-xl flex items-center justify-center hover:bg-white/30"
-          >
+            className="absolute left-4 z-50 md:left-10 h-12 w-12 rounded-full bg-white/20 text-white text-xl flex items-center justify-center hover:bg-white/30">
             ←
           </button>
 
@@ -170,16 +163,14 @@ export default function ProjectDetailClient({ project }: any) {
               e.stopPropagation();
               setSelectedIndex((selectedIndex + 1) % project.images.length);
             }}
-            className="absolute right-4 z-50 md:right-10 h-12 w-12 rounded-full bg-white/20 text-white text-xl flex items-center justify-center hover:bg-white/30"
-          >
+            className="absolute right-4 z-50 md:right-10 h-12 w-12 rounded-full bg-white/20 text-white text-xl flex items-center justify-center hover:bg-white/30">
             →
           </button>
 
           {/* Image container */}
           <div
             className="relative w-full max-w-6xl h-[80vh]"
-            onClick={(e) => e.stopPropagation()}
-          >
+            onClick={(e) => e.stopPropagation()}>
             <Image
               src={project.images[selectedIndex]}
               alt="Preview"
@@ -189,9 +180,9 @@ export default function ProjectDetailClient({ project }: any) {
           </div>
         </div>
       )}
-        
-          {/* Left */}
-          {/* <button
+
+      {/* Left */}
+      {/* <button
             onClick={(e) => {
               e.stopPropagation();
               setSelectedIndex(
@@ -204,8 +195,8 @@ export default function ProjectDetailClient({ project }: any) {
             ←
           </button> */}
 
-          {/* Right */}
-          {/* <button
+      {/* Right */}
+      {/* <button
             onClick={(e) => {
               e.stopPropagation();
               setSelectedIndex((selectedIndex + 1) % project.images.length);
@@ -215,18 +206,19 @@ export default function ProjectDetailClient({ project }: any) {
             →
           </button> */}
 
-          {/* Image container FIX */}
-          <div
-            className="relative w-full max-w-6xl h-[80vh]"
-            onClick={(e) => e.stopPropagation()}
-          >
-            <Image
-              src={project.images[selectedIndex]}
-              alt="Preview"
-              fill
-              className="object-contain"
-            />
-          </div>
-        </div>
-      )}
+      {/* Image container FIX */}
+      <div
+        className="relative w-full max-w-6xl h-[80vh]"
+        onClick={(e) => e.stopPropagation()}>
+        {selectedIndex !== null && (
+          <Image
+            src={project.images[selectedIndex]}
+            alt="Preview"
+            fill
+            className="object-contain"
+          />
+        )}
+      </div>
+    </div>
+  );}
     
