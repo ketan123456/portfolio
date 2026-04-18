@@ -83,7 +83,7 @@ export default function ProjectDetailClient({ project }: any) {
         <div className="flex flex-wrap gap-3">
           {project.techStack.map((tech: string, i: number) => (
             <TechTooltip key={i} tech={tech}>
-              <span className="px-4 py-2 rounded-full text-sm bg-white/10 border border-white/20 hover:bg-white/20 transition">
+              <span className=" ">
                 {tech}
               </span>
             </TechTooltip>
