@@ -153,7 +153,7 @@ export default function ProjectDetailClient({ project }: any) {
                   project.images.length,
               );
             }}
-            className="absolute left-4 z-50 md:left-10 h-12 w-12 rounded-full bg-white/20 text-white text-xl flex items-center justify-center hover:bg-white/30">
+            className="absolute shadow-[0_0_10px_black]  drop-shadow-[0_0_10px_black] left-4 z-50 md:left-10 h-12 w-12 rounded-full bg-white/20 text-white text-xl flex items-center justify-center hover:bg-white/30">
             ←
           </button>
 
@@ -163,7 +163,7 @@ export default function ProjectDetailClient({ project }: any) {
               e.stopPropagation();
               setSelectedIndex((selectedIndex + 1) % project.images.length);
             }}
-            className="absolute right-4 z-50 md:right-10 h-12 w-12 rounded-full bg-white/20 text-white text-xl flex items-center justify-center hover:bg-white/30">
+            className="absolute shadow-[0_0_10px_black]  drop-shadow-[0_0_10px_black] right-4 z-50 md:right-10 h-12 w-12 rounded-full bg-white/20 text-white text-xl flex items-center justify-center hover:bg-white/30">
             →
           </button>
 
