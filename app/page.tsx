@@ -1,38 +1,29 @@
-"use client";
-import dynamic from "next/dynamic";
-const Navbar = dynamic(
-  () => import("../components/Navbar").then((module) => module.Navbar),
-  { loading: () => <p>loading...</p> },
-);
-const Hero = dynamic(() => import("../components/Hero"), {
-  loading: () => <p>loading...</p>,
-});
-const About = dynamic(() => import("../components/About"), {
-  loading: () => <p>loading...</p>,
-});
-const Skills = dynamic(() => import("../components/Skills"), {
-  loading: () => <p>loading...</p>,
-});
-const Experience = dynamic(() => import("../components/Experience"), {
-  loading: () => <p>loading...</p>,
-});
-const Contact = dynamic(() => import("../components/Contact"), {
-  loading: () => <p>loading...</p>,
-});
-const Education = dynamic(() => import("../components/Education"), {
-  loading: () => <p>loading...</p>,
-});
+import About from "../components/About";
+import BootSequence from "../components/BootSequence";
+import Contact from "../components/Contact";
+import Education from "../components/Education";
+import Experience from "../components/Experience";
+import Hero from "../components/Hero";
+import { Navbar } from "../components/Navbar";
+import ProjectsShowcase from "../components/ProjectsShowcase";
+import Services from "../components/Services";
+import Skills from "../components/Skills";
 
 export default function Home() {
   return (
-    <main>
-          <Navbar />
-          <Hero />
-          <About />
-          <Education />
-          <Skills />
-          <Experience />
-          <Contact />
-    </main>
+    <>
+      <BootSequence />
+      <Navbar />
+      <main>
+        <Hero />
+        <About />
+        <Skills />
+        <ProjectsShowcase />
+        <Experience />
+        <Services />
+        <Education />
+        <Contact />
+      </main>
+    </>
   );
 }

@@ -19,7 +19,7 @@ export const projects: ProjectType[] = [
   {
     slug: "mporeo",
     title: "Mporeo",
-    tagline: "Resturant management and food delivery system",
+    tagline: "Restaurant management and food delivery system",
     overview:
       " Mporeo is an end-to-end online restaurant service platform designed to simplify food ordering and delivery for both customers and restaurant owners. The system provides real-time order updates, secure payments, and GPS-enabled delivery tracking. Restaurants can onboard easily, upload menus, manage inventory, and receive live order notifications, while customers can browse, filter, and order from a variety of cuisines. The platform includes three core applications — Customer App, Restaurant Dashboard, and Delivery Partner App — all connected through a powerful Admin Panel that ensures smooth coordination and performance monitoring.",
     techStack: ["HTML", "CSS", "Bootstrap", "jQuery"],
@@ -30,19 +30,19 @@ export const projects: ProjectType[] = [
       "Customers can enjoy discounts, loyalty points, and promo codes, enhancing engagement and retention.",
     ],
     images: [
-      "/mporeo/mporeo1.jpeg",
-      "/mporeo/mporeo2.jpeg",
-      "/mporeo/mporeo3.jpeg",
-      "/mporeo/mporeo4.jpeg",
-      "/mporeo/mporeo5.png",
+      "/Mporeo/mporeo1.jpeg",
+      "/Mporeo/mporeo2.jpeg",
+      "/Mporeo/mporeo3.jpeg",
+      "/Mporeo/mporeo4.jpeg",
+      "/Mporeo/mporeo5.png",
     ],
     liveUrl: "https://mporeo.one",
     role: "Frontend developer",
   },
   {
     slug: "clymb",
-    title: "clymb",
-    tagline: "student performance management system",
+    title: "Clymb",
+    tagline: "Student performance and socio-emotional learning platform",
     overview:
       "Clymb is an EdTech solution that provides personalized learning paths based on CASEL's socio-emotional competencies. The platform integrates Clever for onboarding, offers mental wellness resources, and includes corporate well-being modules. Its mission is to enhance youth’s socio-emotional intelligence through technology-driven education. ",
     role: "UI Developer",
@@ -58,16 +58,16 @@ export const projects: ProjectType[] = [
       "Tracks learning activities and milestones.",
       "Smart suggestions powered by user interaction data.",
     ],
-    images: Array.from({ length: 24 }, (_, i) => `/clymb/clymb${i + 1}.png`),
+    images: Array.from({ length: 24 }, (_, i) => `/Clymb/clymb${i + 1}.png`),
     liveUrl: "https://clymbadmin.evdpl.com",
   },
   {
     slug: "Consciousroot",
     title: "Consciousroot",
-    tagline: "student performance management system",
+    tagline: "Unified multi-vendor e-commerce and affiliate ecosystem",
     overview:
       "Consciousroot is a unified e-commerce ecosystem offering convenience, scalability, and cross-platform accessibility. It bridges the gap between customers, vendors, and admins with real-time operations, analytics, and sleek UI.",
-    role: "Ecommerce plateform",
+    role: "Frontend Developer",
     techStack: ["Next.js", "Redux", "Material"],
     features: [
       "Consumers can easily order and return their products. They can add products to a wishlist to purchase later, choose their preferred payment mode, and view personalized recommendations based on previous purchases.",
@@ -78,7 +78,7 @@ export const projects: ProjectType[] = [
     ],
     images: Array.from(
       { length: 13 },
-      (_, i) => `/Consciousroot/Consciousroot${i + 1}.png`,
+      (_, i) => `/consciousroot/consciousroot${i + 1}.png`,
     ),
     liveUrl: "https://consciousroots.life/home",
   },
@@ -90,7 +90,7 @@ export const projects: ProjectType[] = [
     overview:
       "The Inception Fertility platform was designed to provide an informative, seamless digital experience for users seeking fertility support. It focuses on SEO performance, API-driven content delivery, and clear presentation of scientific data while maintaining compliance with healthcare standards.",
     role: "Frontend Developer",
-    techStack: ["veu.js", "Nuxt.js", "Bootstrap", "SCSS"],
+    techStack: ["Vue.js", "Nuxt.js", "Bootstrap", "SCSS"],
     features: [
       "Offers categorized fertility and medical data with intelligent search for easy access to relevant information.",
       "Empowers marketing teams to update pages via ButterCMS without developer involvement.",

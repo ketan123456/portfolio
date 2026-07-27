@@ -1,60 +1,70 @@
 "use client";
+
 import { motion } from "framer-motion";
+import { revealTransition, revealViewport } from "./motionConfig";
+
+const roles = [
+  {
+    period: "2024 — 2026",
+    role: "Frontend Developer",
+    company: "Systema Procesa Pago Corp",
+    description:
+      "Built production-facing frontend experiences and reusable UI systems for business-critical workflows on a long-term contract.",
+  },
+  {
+    period: "2023 — 2024",
+    role: "Junior Software Engineer",
+    company: "Evince Development Pvt. Ltd.",
+    description:
+      "Delivered responsive applications across React, Angular, Next.js, and Nuxt while collaborating with design, backend, and QA teams.",
+  },
+  {
+    period: "2021 — Present",
+    role: "Independent Product Builder",
+    company: "Selected Projects",
+    description:
+      "Created e-commerce, education, healthcare, restaurant, POS, and local-service platforms for real operating businesses.",
+  },
+];
 
 export default function Experience() {
   return (
-    <section id="experience" className="md:py-24 py-16 px-5 max-w-5xl mx-auto">
-      <h2 className="text-3xl font-bold text-center mb-12">Experience</h2>
+    <section id="experience" className="section section-experience">
+      <div className="section-shell">
+        <div className="eyebrow">04 / Timeline</div>
+        <motion.h2
+          className="section-title"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={revealViewport}
+          transition={revealTransition}
+        >
+          A trajectory built
+          <br />
+          <span className="gradient-text">through shipping.</span>
+        </motion.h2>
 
-      <motion.div
-        whileHover={{ scale: 1.02 }}
-        className=" p-8 rounded-2xl
-        text-sm text-white/90
-        bg-white/5
-        backdrop-blur-2xl
-        border border-white/10
-        shadow-[0_0_20px_rgba(255,255,255,0.05)]
-        transition-all duration-300
-        hover:bg-white/10
-        hover:border-white/20
-        hover:shadow-[0_0_30px_rgba(255,255,255,0.15)]
-        hover:-translate-y-1
-        cursor-pointer
-        before:absolute before:inset-0 before:rounded-2xl
-        before:bg-gradient-to-r before:from-white/20 before:to-transparent
-        before:opacity-0 hover:before:opacity-100
-        before:transition mb-8">
-        <div className="flex gap-4 justify-between">
-          <h3 className="font-semibold">Systema Procesa Pago Corp</h3>
-          <p className="font-normal">Nov 2024-Jan 2026</p>
+        <div className="timeline">
+          {roles.map((item, index) => (
+            <motion.article
+              key={item.company}
+              className="timeline-item"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={revealViewport}
+              transition={{ ...revealTransition, delay: index * 0.09 }}
+            >
+              <span className="timeline-dot" />
+              <div className="timeline-period">{item.period}</div>
+              <div>
+                <h3>{item.role}</h3>
+                <strong>{item.company}</strong>
+                <p>{item.description}</p>
+              </div>
+            </motion.article>
+          ))}
         </div>
-        <p className="text-gray-400">Frontend Developer (Contract)</p>
-      </motion.div>
-
-      <motion.div
-        whileHover={{ scale: 1.02 }}
-        className=" p-8 rounded-2xl
-        text-sm text-white/90
-        bg-white/5
-        backdrop-blur-2xl
-        border border-white/10
-        shadow-[0_0_20px_rgba(255,255,255,0.05)]
-        transition-all duration-300
-        hover:bg-white/10
-        hover:border-white/20
-        hover:shadow-[0_0_30px_rgba(255,255,255,0.15)]
-        hover:-translate-y-1
-        cursor-pointer
-        before:absolute before:inset-0 before:rounded-2xl
-        before:bg-gradient-to-r before:from-white/20 before:to-transparent
-        before:opacity-0 hover:before:opacity-100
-        before:transition mb-8">
-        <div className="flex gap-4 justify-between">
-          <h3 className="font-semibold">Evince Development Pvt. Ltd</h3>
-          <p className="font-normal">Feb 2023-Oct 2024</p>
-        </div>
-        <p className="text-gray-400">Junior Software Engineer</p>
-      </motion.div>
+      </div>
     </section>
   );
 }

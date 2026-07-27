@@ -1,63 +1,72 @@
+import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { projects } from "../../Data/projects";
-import { metadata } from "../layout";
+import { Navbar } from "../../components/Navbar";
+
+export const metadata: Metadata = {
+  title: "Project Archive",
+  description:
+    "Selected frontend, e-commerce, education, healthcare, and operations projects by Ketan Kritesh.",
+};
 
 export default function ProjectsPage() {
-    metadata.title = "Projects | Ketan Kritesh";
   return (
-    <div className="min-h-screen bg-black text-white px-6 md:px-16 py-20">
-      <Link href="/" className="text-white/60 hover:text-white transition">
-        ← Back to Home
-      </Link>
-      <h1 className="text-4xl md:text-5xl font-bold mb-14 mt-10">Projects</h1>
+    <>
+      <Navbar />
+      <main className="archive-page grid-surface">
+        <header className="archive-hero">
+          <div className="archive-kicker">Project archive / 2021 — 2026</div>
+          <h1>
+            SHIPPED
+            <br />
+            <span className="gradient-text">SYSTEMS.</span>
+          </h1>
+          <p>
+            A complete collection of products spanning commerce, education,
+            healthcare, restaurant operations, payments, and local services.
+          </p>
+        </header>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 ">
-        {projects.map((project) => (
-          <Link key={project.slug} href={`/projects/${project.slug}`}>
-            <div
-              className="
-              h-full
-                group relative overflow-hidden
-                bg-white/5
-                backdrop-blur-2xl
-                border border-white/10
-                rounded-3xl
-                p-6
-                transition-all duration-500
-                hover:bg-white/10
-                hover:border-white/20
-                hover:-translate-y-3
-                hover:shadow-2xl
-                flex flex-col
-              ">
-              <h3 className="text-xl font-semibold">{project.title}</h3>
-
-              <p className="mt-2 mb-4 text-white/70 text-sm">{project.tagline}</p>
-
-              <div className="mt-auto flex flex-wrap gap-2">
-                {project.techStack.map((tech, i) => (
-                  <span
-                    key={i}
-                    className="text-xs px-3 py-1 rounded-full bg-white/10 text-white/80">
-                    {tech}
-                  </span>
-                ))}
+        <div className="archive-grid">
+          {projects.map((project, index) => (
+            <Link
+              key={project.slug}
+              href={`/projects/${project.slug}`}
+              className="archive-card"
+            >
+              <div className="archive-card-image">
+                <Image
+                  src={project.images[0]}
+                  alt={`${project.title} interface`}
+                  fill
+                  priority={index < 2}
+                  sizes="(max-width: 820px) 100vw, 50vw"
+                  className="object-cover"
+                />
+                <div className="image-scanlines" />
               </div>
-
-              {/* Hover gradient overlay */}
-              <div
-                className="
-                absolute inset-0
-                opacity-0
-                group-hover:opacity-100
-                transition duration-700
-                bg-gradient-to-br from-white/10 via-transparent to-transparent
-              "
-              />
-            </div>
-          </Link>
-        ))}
-      </div>
-    </div>
+              <div className="archive-card-content">
+                <div className="archive-card-number">
+                  {String(index + 1).padStart(2, "0")} /{" "}
+                  {String(projects.length).padStart(2, "0")}
+                </div>
+                <h2>{project.title}</h2>
+                <p>{project.tagline}</p>
+                <div className="tag-list">
+                  {project.techStack.slice(0, 4).map((tech) => (
+                    <span key={tech}>{tech}</span>
+                  ))}
+                </div>
+                <div className="archive-card-action">
+                  <span>{project.role}</span>
+                  <span>View case study ↗</span>
+                </div>
+              </div>
+            </Link>
+          ))}
+        </div>
+      </main>
+    </>
   );
 }

@@ -1,21 +1,35 @@
-import { projects } from "../../../Data/projects";
+import type { Metadata } from "next";
 import { notFound } from "next/navigation";
+import { projects } from "../../../Data/projects";
+import { Navbar } from "../../../components/Navbar";
 import ProjectDetailClient from "../../../components/ProjectDetailClient";
 
-export async function generateStaticParams() {
-  return projects.map((project) => ({
-    slug: project.slug,
-  }));
+type ProjectPageProps = {
+  params: { slug: string };
+};
+
+export function generateStaticParams() {
+  return projects.map((project) => ({ slug: project.slug }));
 }
 
-export default function ProjectDetail({
-  params,
-}: {
-  params: { slug: string };
-}) {
-  const project = projects.find((p) => p.slug === params.slug);
+export function generateMetadata({ params }: ProjectPageProps): Metadata {
+  const project = projects.find((item) => item.slug === params.slug);
+  if (!project) return {};
 
-  if (!project) return notFound();
+  return {
+    title: project.title,
+    description: project.tagline,
+  };
+}
 
-  return <ProjectDetailClient project={project} />;
+export default function ProjectDetail({ params }: ProjectPageProps) {
+  const project = projects.find((item) => item.slug === params.slug);
+  if (!project) notFound();
+
+  return (
+    <>
+      <Navbar />
+      <ProjectDetailClient project={project} />
+    </>
+  );
 }
