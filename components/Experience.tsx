@@ -5,26 +5,20 @@ import { revealTransition, revealViewport } from "./motionConfig";
 
 const roles = [
   {
-    period: "2024 — 2026",
+    period: "2024(Mar) — present",
     role: "Frontend Developer",
-    company: "Systema Procesa Pago Corp",
+    company: "Stranity India Private Limited",
     description:
       "Built production-facing frontend experiences and reusable UI systems for business-critical workflows on a long-term contract.",
   },
   {
-    period: "2023 — 2024",
+    period: "2023(FEB) — 2024(OCT)",
     role: "Junior Software Engineer",
     company: "Evince Development Pvt. Ltd.",
     description:
       "Delivered responsive applications across React, Angular, Next.js, and Nuxt while collaborating with design, backend, and QA teams.",
   },
-  {
-    period: "2021 — Present",
-    role: "Independent Product Builder",
-    company: "Selected Projects",
-    description:
-      "Created e-commerce, education, healthcare, restaurant, POS, and local-service platforms for real operating businesses.",
-  },
+  
 ];
 
 export default function Experience() {
