@@ -5,7 +5,7 @@ import { revealTransition, revealViewport } from "./motionConfig";
 
 const roles = [
   {
-    period: "2024(Mar) — present",
+    period: "2025(Mar) — present",
     role: "Frontend Developer",
     company: "Stranity India Private Limited",
     description:
